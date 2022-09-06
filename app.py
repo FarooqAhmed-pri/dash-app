@@ -38,7 +38,7 @@ server = app.server
 fig = px.pie(df_grp_dash, values='Numbers', names='Category',color = "Category",hole=.2,color_discrete_map={'Tests Passed':'#66CDAA',
                                  'Tests Under Development':'#00BFFF',                                                                           
                                  'Tests Failed':'#CD5C5C'})
-fig.update_layout(title={'text': '<b>Pie Chart SoC</b>','y':1,
+fig.update_layout(title={'text': '<b>Pie Chart Castor IP</b>','y':1,
         'x':0.5,
         'xanchor': 'center',
         'yanchor': 'top'},
@@ -127,7 +127,7 @@ app.layout = html.Div(style = {
     }
     
   ),
-    html.Div(children = 'Gemini SoC Tests Statistics', style = {
+    html.Div(children = 'Castor IP Tests Statistics', style = {
     'textAlign': 'center',
     # 'color': '#7FDBFF',
     'color': 'blue',
@@ -303,7 +303,7 @@ dash_table.DataTable(    style_data={
  dcc.Markdown('''
     [](/)
 '''),
-html.Div(children = 'IP-wise Statistics', style = {
+html.Div(children = 'Statistics', style = {
     'textAlign': 'center',
     # 'color': '#7FDBFF',
     'color': 'black',
@@ -464,463 +464,463 @@ html.Div(children = 'Combined Coverage Report:', style = {
     [](/)
 '''),
 
-    html.Div(children = 'SRAM  (Unit Level) Tests Statistics', style = {
-    'textAlign': 'center',
-    # 'color': '#7FDBFF',
-    'color': 'blue',
-    'fontWeight': 'bold',
-    'font-size':'x-large',
-  }),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Graph(
-    id = 'gemini-graph-sram',
-    figure = fig_sram
-  ),
-html.Div(children = 'General Statistics SRAM  (Unit Level)', style = {
-    'textAlign': 'center',
-    # 'color': '#7FDBFF',
-    'color': 'black',
-    'fontWeight': 'bold',
-    'font-size':'large',
-  }),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-dash_table.DataTable(    style_data={
-        'whiteSpace': 'normal',
-        'height': 'auto',
-        'textAlign': 'center',
-        'lineHeight': '10px'
-    },
-    data=sram_df_table.to_dict('records'), 
-    columns=[{"name": i, "id": i} for i in sram_df_table.columns],
-        css=[{"selector": "input", "rule": "color:gray"}],
-            # data=df.to_dict("records"),
-            style_cell={"color": "gray"},
-            # editable=True,
-            style_data_conditional=[
-                {"if": {"row_index": 0}, "backgroundColor": "#00BFFF"},
-                {"if": {"row_index": 1}, "backgroundColor": "#66CDAA"},
-                {"if": {"row_index": 2}, "backgroundColor": "#CD5C5C"},
-                {
-                    "if": {"state": "active"},
-                    "backgroundColor": "inherit !important",
-                    "border": "1px solid black",
-                    # "color": "gray",
-                },
-                {
-                    "if": {"state": "selected"},
-                    "backgroundColor": "inherit !important",
-                    # "border": "1px solid blue",
-                },
-        {
-            'if': {
-                'filter_query': '{Numbers} > 0',
-                'row_index': 2,
-            },
-            'backgroundColor': '#CD5C5C',
-            'color': 'black'
-         },
-            ],
-        style_cell_conditional=[
-        {'if': {'column_id': 'Category'},
-         'width': '10%',
-         'textAlign': 'center',
-         'fontWeight': 'bold',
-         'color': 'BLACK'},
-        {'if': {'column_id': 'Numbers'},
-         'width': '10%',
-         'textAlign': 'center',
-         'fontWeight': 'bold',
-         'color': 'BLACK'},
-    ]),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-html.Div(children = 'Test-wise Statistics', style = {
-    'textAlign': 'center',
-    # 'color': '#7FDBFF',
-    'color': 'black',
-    'fontWeight': 'bold',
-    'font-size':'large',
-  }),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-dbc.Label("Show number of rows for sram tests:"),
-    sram_row_drop := dcc.Dropdown(value=10, clearable=False, style={'width':'35%'},
-                             options=[10, 25, 50, 100]),
-        dbc.Row([
-        dbc.Col([
-            sram_test_name_drop := dcc.Dropdown([x for x in sorted(sram_df_f.Test_Name.unique())])
-        ], width=3),
+#     html.Div(children = 'SRAM  (Unit Level) Tests Statistics', style = {
+#     'textAlign': 'center',
+#     # 'color': '#7FDBFF',
+#     'color': 'blue',
+#     'fontWeight': 'bold',
+#     'font-size':'x-large',
+#   }),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Graph(
+#     id = 'gemini-graph-sram',
+#     figure = fig_sram
+#   ),
+# html.Div(children = 'General Statistics SRAM  (Unit Level)', style = {
+#     'textAlign': 'center',
+#     # 'color': '#7FDBFF',
+#     'color': 'black',
+#     'fontWeight': 'bold',
+#     'font-size':'large',
+#   }),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# dash_table.DataTable(    style_data={
+#         'whiteSpace': 'normal',
+#         'height': 'auto',
+#         'textAlign': 'center',
+#         'lineHeight': '10px'
+#     },
+#     data=sram_df_table.to_dict('records'), 
+#     columns=[{"name": i, "id": i} for i in sram_df_table.columns],
+#         css=[{"selector": "input", "rule": "color:gray"}],
+#             # data=df.to_dict("records"),
+#             style_cell={"color": "gray"},
+#             # editable=True,
+#             style_data_conditional=[
+#                 {"if": {"row_index": 0}, "backgroundColor": "#00BFFF"},
+#                 {"if": {"row_index": 1}, "backgroundColor": "#66CDAA"},
+#                 {"if": {"row_index": 2}, "backgroundColor": "#CD5C5C"},
+#                 {
+#                     "if": {"state": "active"},
+#                     "backgroundColor": "inherit !important",
+#                     "border": "1px solid black",
+#                     # "color": "gray",
+#                 },
+#                 {
+#                     "if": {"state": "selected"},
+#                     "backgroundColor": "inherit !important",
+#                     # "border": "1px solid blue",
+#                 },
+#         {
+#             'if': {
+#                 'filter_query': '{Numbers} > 0',
+#                 'row_index': 2,
+#             },
+#             'backgroundColor': '#CD5C5C',
+#             'color': 'black'
+#          },
+#             ],
+#         style_cell_conditional=[
+#         {'if': {'column_id': 'Category'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'fontWeight': 'bold',
+#          'color': 'BLACK'},
+#         {'if': {'column_id': 'Numbers'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'fontWeight': 'bold',
+#          'color': 'BLACK'},
+#     ]),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# html.Div(children = 'Test-wise Statistics', style = {
+#     'textAlign': 'center',
+#     # 'color': '#7FDBFF',
+#     'color': 'black',
+#     'fontWeight': 'bold',
+#     'font-size':'large',
+#   }),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# dbc.Label("Show number of rows for sram tests:"),
+#     sram_row_drop := dcc.Dropdown(value=10, clearable=False, style={'width':'35%'},
+#                              options=[10, 25, 50, 100]),
+#         dbc.Row([
+#         dbc.Col([
+#             sram_test_name_drop := dcc.Dropdown([x for x in sorted(sram_df_f.Test_Name.unique())])
+#         ], width=3),
 
-    ], 
-    justify="between", className='mt-3 mb-4'),
+#     ], 
+#     justify="between", className='mt-3 mb-4'),
 
-    my_table_sram := dash_table.DataTable(
-        columns=[
-            {'name': 'Test_Name', 'id': 'Test_Name', 'type': 'text'},
-            {'name': 'Status', 'id': 'Status', 'type': 'text'},
-            {'name': 'Remarks', 'id': 'Remarks', 'type': 'text'}
-        ],
-        style_table={'overflowX': 'auto'},
-        data=sram_df_f.to_dict('records'),
-        filter_action='native',
-        page_size=10,
-           style_data={
-        'whiteSpace': 'normal',
-        'height': 'auto',
-        'textAlign': 'center',
-        # 'lineHeight': '10px'
-    },
-            # editable=True,
-            style_data_conditional=[
-                {"if": {"row_index": "odd"}, "backgroundColor": "#66CDAA"},
-                {"if": {"row_index": "even"}, "backgroundColor": "#66CDAA"},
-                {
-                    "if": {"state": "active"},
-                    "backgroundColor": "inherit !important",
-                    "border": "1px solid black",
-                    # "color": "gray",
-                },
-                # {
-                #     "if": {"state": "selected"},
-                #     "backgroundColor": "black",
-                #     # "border": "1px solid blue",
-                # },
-                   {"if": {"state": "selected"},
-                         "backgroundColor": "inherit !important",
-                          "border": "inherit !important",},
-            {
-            'if': {
-                'filter_query': '{Status} contains "Failed"',
-                'column_id': 'Status'
-            },
-            'backgroundColor': '#CD5C5C',
-            'color': 'black'
-         },
-            {
-            'if': {
-                'filter_query': '{Status} contains "timeout"',
-                'column_id': 'Status'
-            },
-            'backgroundColor': '#CD5C5C',
-            'color': 'black'
-         },
-            ],
-        style_cell_conditional=[
-        {'if': {'column_id': 'Test_Name'},
-         'width': '10%',
-         'textAlign': 'center',
-         'color': 'BLACK',
-         'fontWeight': 'bold'},
-                {'if': {'column_id': 'Status'},
-         'width': '10%',
-         'textAlign': 'center',
-         'color': 'BLACK',
-         'fontWeight': 'bold'},
-                 {'if': {'column_id': 'Remarks'},
-         'width': '50%',
-         'textAlign': 'center',
-         'color': 'BLACK',
-         'fontWeight': 'bold'
-         },
+#     my_table_sram := dash_table.DataTable(
+#         columns=[
+#             {'name': 'Test_Name', 'id': 'Test_Name', 'type': 'text'},
+#             {'name': 'Status', 'id': 'Status', 'type': 'text'},
+#             {'name': 'Remarks', 'id': 'Remarks', 'type': 'text'}
+#         ],
+#         style_table={'overflowX': 'auto'},
+#         data=sram_df_f.to_dict('records'),
+#         filter_action='native',
+#         page_size=10,
+#            style_data={
+#         'whiteSpace': 'normal',
+#         'height': 'auto',
+#         'textAlign': 'center',
+#         # 'lineHeight': '10px'
+#     },
+#             # editable=True,
+#             style_data_conditional=[
+#                 {"if": {"row_index": "odd"}, "backgroundColor": "#66CDAA"},
+#                 {"if": {"row_index": "even"}, "backgroundColor": "#66CDAA"},
+#                 {
+#                     "if": {"state": "active"},
+#                     "backgroundColor": "inherit !important",
+#                     "border": "1px solid black",
+#                     # "color": "gray",
+#                 },
+#                 # {
+#                 #     "if": {"state": "selected"},
+#                 #     "backgroundColor": "black",
+#                 #     # "border": "1px solid blue",
+#                 # },
+#                    {"if": {"state": "selected"},
+#                          "backgroundColor": "inherit !important",
+#                           "border": "inherit !important",},
+#             {
+#             'if': {
+#                 'filter_query': '{Status} contains "Failed"',
+#                 'column_id': 'Status'
+#             },
+#             'backgroundColor': '#CD5C5C',
+#             'color': 'black'
+#          },
+#             {
+#             'if': {
+#                 'filter_query': '{Status} contains "timeout"',
+#                 'column_id': 'Status'
+#             },
+#             'backgroundColor': '#CD5C5C',
+#             'color': 'black'
+#          },
+#             ],
+#         style_cell_conditional=[
+#         {'if': {'column_id': 'Test_Name'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'color': 'BLACK',
+#          'fontWeight': 'bold'},
+#                 {'if': {'column_id': 'Status'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'color': 'BLACK',
+#          'fontWeight': 'bold'},
+#                  {'if': {'column_id': 'Remarks'},
+#          'width': '50%',
+#          'textAlign': 'center',
+#          'color': 'BLACK',
+#          'fontWeight': 'bold'
+#          },
          
-    ]),
-html.Div(children = 'Coverage Report SRAM:', style = {
-    'textAlign': 'left',
-    'color': 'BLACK',
-    'fontWeight': 'bold'
-  }),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-html.Div(children = html.Iframe(
-            src="assets/sram/dashboard.html",
-            style={"height": "1067px", "width": "100%"},
-        )
-  ),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
+#     ]),
+# html.Div(children = 'Coverage Report SRAM:', style = {
+#     'textAlign': 'left',
+#     'color': 'BLACK',
+#     'fontWeight': 'bold'
+#   }),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# html.Div(children = html.Iframe(
+#             src="assets/sram/dashboard.html",
+#             style={"height": "1067px", "width": "100%"},
+#         )
+#   ),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
 
-    html.Div(children = 'FCB  (Unit Level) Tests Statistics', style = {
-    'textAlign': 'center',
-    # 'color': '#7FDBFF',
-    'color': 'blue',
-    'fontWeight': 'bold',
-    'font-size':'x-large',
-  }),
-dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Graph(
-    id = 'gemini-graph-fcb',
-    figure = fig_fcb
-  ),
-html.Div(children = 'General Statistics FCB  (Unit Level)', style = {
-    'textAlign': 'center',
-    # 'color': '#7FDBFF',
-    'color': 'black',
-    'fontWeight': 'bold',
-    'font-size':'large',
-  }),
-dash_table.DataTable(    style_data={
-        'whiteSpace': 'normal',
-        'height': 'auto',
-        'textAlign': 'center',
-        'lineHeight': '10px'
-    },
-    data=fcb_df_table.to_dict('records'), 
-    columns=[{"name": i, "id": i} for i in fcb_df_table.columns],
-        css=[{"selector": "input", "rule": "color:gray"}],
-            # data=df.to_dict("records"),
-            style_cell={"color": "gray"},
-            # editable=True,
-            style_data_conditional=[
-                {"if": {"row_index": 0}, "backgroundColor": "#00BFFF"},
-                {"if": {"row_index": 1}, "backgroundColor": "#66CDAA"},
-                {"if": {"row_index": 2}, "backgroundColor": "#CD5C5C"},
-                {
-                    "if": {"state": "active"},
-                    "backgroundColor": "inherit !important",
-                    "border": "1px solid black",
-                    # "color": "gray",
-                },
-                {
-                    "if": {"state": "selected"},
-                    "backgroundColor": "inherit !important",
-                    # "border": "1px solid blue",
-                },
-        {
-            'if': {
-                'filter_query': '{Numbers} > 0',
-                'row_index': 2,
-            },
-            'backgroundColor': '#CD5C5C',
-            'color': 'black'
-         },
-            ],
-        style_cell_conditional=[
-        {'if': {'column_id': 'Category'},
-         'width': '10%',
-         'textAlign': 'center',
-         'fontWeight': 'bold',
-         'color': 'BLACK'},
-        {'if': {'column_id': 'Numbers'},
-         'width': '10%',
-         'textAlign': 'center',
-         'fontWeight': 'bold',
-         'color': 'BLACK'},
-    ]),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-html.Div(children = 'Test-wise Statistics', style = {
-    'textAlign': 'center',
-    # 'color': '#7FDBFF',
-    'color': 'black',
-    'fontWeight': 'bold',
-    'font-size':'large',
-  }),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-dbc.Label("Show number of rows for fcb tests:"),
-    fcb_row_drop := dcc.Dropdown(value=10, clearable=False, style={'width':'35%'},
-                             options=[10, 25, 50, 100]),
-        dbc.Row([
-        dbc.Col([
-            fcb_test_name_drop := dcc.Dropdown([x for x in sorted(fcb_df_f.Test_Name.unique())])
-        ], width=3),
+#     html.Div(children = 'FCB  (Unit Level) Tests Statistics', style = {
+#     'textAlign': 'center',
+#     # 'color': '#7FDBFF',
+#     'color': 'blue',
+#     'fontWeight': 'bold',
+#     'font-size':'x-large',
+#   }),
+# dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Graph(
+#     id = 'gemini-graph-fcb',
+#     figure = fig_fcb
+#   ),
+# html.Div(children = 'General Statistics FCB  (Unit Level)', style = {
+#     'textAlign': 'center',
+#     # 'color': '#7FDBFF',
+#     'color': 'black',
+#     'fontWeight': 'bold',
+#     'font-size':'large',
+#   }),
+# dash_table.DataTable(    style_data={
+#         'whiteSpace': 'normal',
+#         'height': 'auto',
+#         'textAlign': 'center',
+#         'lineHeight': '10px'
+#     },
+#     data=fcb_df_table.to_dict('records'), 
+#     columns=[{"name": i, "id": i} for i in fcb_df_table.columns],
+#         css=[{"selector": "input", "rule": "color:gray"}],
+#             # data=df.to_dict("records"),
+#             style_cell={"color": "gray"},
+#             # editable=True,
+#             style_data_conditional=[
+#                 {"if": {"row_index": 0}, "backgroundColor": "#00BFFF"},
+#                 {"if": {"row_index": 1}, "backgroundColor": "#66CDAA"},
+#                 {"if": {"row_index": 2}, "backgroundColor": "#CD5C5C"},
+#                 {
+#                     "if": {"state": "active"},
+#                     "backgroundColor": "inherit !important",
+#                     "border": "1px solid black",
+#                     # "color": "gray",
+#                 },
+#                 {
+#                     "if": {"state": "selected"},
+#                     "backgroundColor": "inherit !important",
+#                     # "border": "1px solid blue",
+#                 },
+#         {
+#             'if': {
+#                 'filter_query': '{Numbers} > 0',
+#                 'row_index': 2,
+#             },
+#             'backgroundColor': '#CD5C5C',
+#             'color': 'black'
+#          },
+#             ],
+#         style_cell_conditional=[
+#         {'if': {'column_id': 'Category'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'fontWeight': 'bold',
+#          'color': 'BLACK'},
+#         {'if': {'column_id': 'Numbers'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'fontWeight': 'bold',
+#          'color': 'BLACK'},
+#     ]),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# html.Div(children = 'Test-wise Statistics', style = {
+#     'textAlign': 'center',
+#     # 'color': '#7FDBFF',
+#     'color': 'black',
+#     'fontWeight': 'bold',
+#     'font-size':'large',
+#   }),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# dbc.Label("Show number of rows for fcb tests:"),
+#     fcb_row_drop := dcc.Dropdown(value=10, clearable=False, style={'width':'35%'},
+#                              options=[10, 25, 50, 100]),
+#         dbc.Row([
+#         dbc.Col([
+#             fcb_test_name_drop := dcc.Dropdown([x for x in sorted(fcb_df_f.Test_Name.unique())])
+#         ], width=3),
 
-    ], 
-    justify="between", className='mt-3 mb-4'),
+#     ], 
+#     justify="between", className='mt-3 mb-4'),
 
-    my_table_fcb := dash_table.DataTable(
-        columns=[
-            {'name': 'Test_Name', 'id': 'Test_Name', 'type': 'text'},
-            {'name': 'Status', 'id': 'Status', 'type': 'text'},
-            {'name': 'Remarks', 'id': 'Remarks', 'type': 'text'}
-        ],
-        style_table={'overflowX': 'auto'},
-        data=fcb_df_f.to_dict('records'),
-        filter_action='native',
-        page_size=10,
-           style_data={
-        'whiteSpace': 'normal',
-        'height': 'auto',
-        'textAlign': 'center',
-        # 'lineHeight': '10px'
-    },
-            # editable=True,
-            style_data_conditional=[
-                {"if": {"row_index": "odd"}, "backgroundColor": "#66CDAA"},
-                {"if": {"row_index": "even"}, "backgroundColor": "#66CDAA"},
-                {
-                    "if": {"state": "active"},
-                    "backgroundColor": "inherit !important",
-                    "border": "1px solid black",
-                    # "color": "gray",
-                },
-                # {
-                #     "if": {"state": "selected"},
-                #     "backgroundColor": "black",
-                #     # "border": "1px solid blue",
-                # },
-                   {"if": {"state": "selected"},
-                         "backgroundColor": "inherit !important",
-                          "border": "inherit !important",},
-            {
-            'if': {
-                'filter_query': '{Status} contains "Failed"',
-                'column_id': 'Status'
-            },
-            'backgroundColor': '#CD5C5C',
-            'color': 'black'
-         },
+#     my_table_fcb := dash_table.DataTable(
+#         columns=[
+#             {'name': 'Test_Name', 'id': 'Test_Name', 'type': 'text'},
+#             {'name': 'Status', 'id': 'Status', 'type': 'text'},
+#             {'name': 'Remarks', 'id': 'Remarks', 'type': 'text'}
+#         ],
+#         style_table={'overflowX': 'auto'},
+#         data=fcb_df_f.to_dict('records'),
+#         filter_action='native',
+#         page_size=10,
+#            style_data={
+#         'whiteSpace': 'normal',
+#         'height': 'auto',
+#         'textAlign': 'center',
+#         # 'lineHeight': '10px'
+#     },
+#             # editable=True,
+#             style_data_conditional=[
+#                 {"if": {"row_index": "odd"}, "backgroundColor": "#66CDAA"},
+#                 {"if": {"row_index": "even"}, "backgroundColor": "#66CDAA"},
+#                 {
+#                     "if": {"state": "active"},
+#                     "backgroundColor": "inherit !important",
+#                     "border": "1px solid black",
+#                     # "color": "gray",
+#                 },
+#                 # {
+#                 #     "if": {"state": "selected"},
+#                 #     "backgroundColor": "black",
+#                 #     # "border": "1px solid blue",
+#                 # },
+#                    {"if": {"state": "selected"},
+#                          "backgroundColor": "inherit !important",
+#                           "border": "inherit !important",},
+#             {
+#             'if': {
+#                 'filter_query': '{Status} contains "Failed"',
+#                 'column_id': 'Status'
+#             },
+#             'backgroundColor': '#CD5C5C',
+#             'color': 'black'
+#          },
 
-            ],
-        style_cell_conditional=[
-        {'if': {'column_id': 'Test_Name'},
-         'width': '10%',
-         'textAlign': 'center',
-         'color': 'BLACK',
-         'fontWeight': 'bold'},
-                {'if': {'column_id': 'Status'},
-         'width': '10%',
-         'textAlign': 'center',
-         'color': 'BLACK',
-         'fontWeight': 'bold'},
-                 {'if': {'column_id': 'Remarks'},
-         'width': '50%',
-         'textAlign': 'center',
-         'color': 'BLACK',
-         'fontWeight': 'bold'
-         },
+#             ],
+#         style_cell_conditional=[
+#         {'if': {'column_id': 'Test_Name'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'color': 'BLACK',
+#          'fontWeight': 'bold'},
+#                 {'if': {'column_id': 'Status'},
+#          'width': '10%',
+#          'textAlign': 'center',
+#          'color': 'BLACK',
+#          'fontWeight': 'bold'},
+#                  {'if': {'column_id': 'Remarks'},
+#          'width': '50%',
+#          'textAlign': 'center',
+#          'color': 'BLACK',
+#          'fontWeight': 'bold'
+#          },
          
-    ]),
-html.Div(children = 'Coverage Report FCB:', style = {
-    'textAlign': 'left',
-    'color': 'Black',
-    'fontWeight': 'bold'
-  }),
-dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
- dcc.Markdown('''
-    [](/)
-'''),
-html.Div(children = html.Iframe(
-            src="assets/fcb/dashboard.html",
-            style={"height": "1067px", "width": "100%"},
-        )
-  ),
+#     ]),
+# html.Div(children = 'Coverage Report FCB:', style = {
+#     'textAlign': 'left',
+#     'color': 'Black',
+#     'fontWeight': 'bold'
+#   }),
+# dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+#  dcc.Markdown('''
+#     [](/)
+# '''),
+# html.Div(children = html.Iframe(
+#             src="assets/fcb/dashboard.html",
+#             style={"height": "1067px", "width": "100%"},
+#         )
+#   ),
 
-])
-])
+# ])
+# ])
 @callback(
     Output(my_table, 'data'),
     Output(my_table, 'page_size'),
