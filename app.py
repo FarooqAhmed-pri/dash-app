@@ -931,26 +931,26 @@ def update_dropdown_options(IP_v,row_v):
     if IP_v:
         dff = dff[dff.IP==IP_v]
     return dff.to_dict('records'), row_v
-@callback(
-    Output(my_table_sram, 'data'),
-    Output(my_table_sram, 'page_size'),
-    Input(sram_test_name_drop, 'value'),
-    Input(sram_row_drop, 'value'),)
-def update_dropdown_options_sram(tname_v,sram_row_v):
-    dff_S = sram_df_f.copy()
-    if tname_v:
-        dff_S =dff_S[dff_S.Test_Name==tname_v]
-    return dff_S.to_dict('records'),sram_row_v
-@callback(
-    Output(my_table_fcb, 'data'),
-    Output(my_table_fcb, 'page_size'),
-    Input(fcb_test_name_drop, 'value'),
-    Input(fcb_row_drop, 'value'),)
-def update_dropdown_options_sram(tname_v,fcb_row_v):
-    dff_F = fcb_df_f.copy()
-    if tname_v:
-        dff_F =dff_F[dff_F.Test_Name==tname_v]
-    return dff_F.to_dict('records'),fcb_row_v
+# @callback(
+#     Output(my_table_sram, 'data'),
+#     Output(my_table_sram, 'page_size'),
+#     Input(sram_test_name_drop, 'value'),
+#     Input(sram_row_drop, 'value'),)
+# def update_dropdown_options_sram(tname_v,sram_row_v):
+#     dff_S = sram_df_f.copy()
+#     if tname_v:
+#         dff_S =dff_S[dff_S.Test_Name==tname_v]
+#     return dff_S.to_dict('records'),sram_row_v
+# @callback(
+#     Output(my_table_fcb, 'data'),
+#     Output(my_table_fcb, 'page_size'),
+#     Input(fcb_test_name_drop, 'value'),
+#     Input(fcb_row_drop, 'value'),)
+# def update_dropdown_options_sram(tname_v,fcb_row_v):
+#     dff_F = fcb_df_f.copy()
+#     if tname_v:
+#         dff_F =dff_F[dff_F.Test_Name==tname_v]
+#     return dff_F.to_dict('records'),fcb_row_v
 
 
 
