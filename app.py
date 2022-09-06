@@ -920,7 +920,7 @@ html.Div(children = 'Combined Coverage Report:', style = {
 #   ),
 
 # ])
-# ])
+])
 @callback(
     Output(my_table, 'data'),
     Output(my_table, 'page_size'),
