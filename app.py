@@ -183,7 +183,7 @@ dbc.Container([
  dcc.Markdown('''
     [](/)
 '''),
- dcc.Markdown('''
+ dcc.Markdown(''' 
     [](/)
 '''),
  dcc.Graph(
