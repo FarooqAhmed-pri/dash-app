@@ -9,15 +9,15 @@ df_table = pd.read_csv('css_states_dash.csv')
 df_states = pd.read_csv('css_states.csv')
 df_time_lg = pd.read_csv('time.csv')
 
-sram_df_grp_dash=pd.read_csv('sram_pie_states_dash.csv')
-sram_df_table = pd.read_csv('sram_css_states_dash.csv')
-sram_df_states = pd.read_csv('sram_css_states.csv')
-sram_df_time_lg = pd.read_csv('sram_time.csv')
+# sram_df_grp_dash=pd.read_csv('sram_pie_states_dash.csv')
+# sram_df_table = pd.read_csv('sram_css_states_dash.csv')
+# sram_df_states = pd.read_csv('sram_css_states.csv')
+# sram_df_time_lg = pd.read_csv('sram_time.csv')
 
-fcb_df_grp_dash=pd.read_csv('fcb_pie_states_dash.csv')
-fcb_df_table = pd.read_csv('fcb_css_states_dash.csv')
-fcb_df_states = pd.read_csv('fcb_css_states.csv')
-fcb_df_time_lg = pd.read_csv('fcb_time.csv')
+# fcb_df_grp_dash=pd.read_csv('fcb_pie_states_dash.csv')
+# fcb_df_table = pd.read_csv('fcb_css_states_dash.csv')
+# fcb_df_states = pd.read_csv('fcb_css_states.csv')
+# fcb_df_time_lg = pd.read_csv('fcb_time.csv')
 
 
 
@@ -27,11 +27,11 @@ print(time_var)
 df_f = pd.read_csv('css_states.csv')
 df_f = df_f[['IP', 'Test_Name', 'Status', 'Remarks']]
 
-sram_df_f = pd.read_csv('sram_css_states.csv')
-sram_df_f = sram_df_f[['Test_Name', 'Status', 'Remarks']]
+# sram_df_f = pd.read_csv('sram_css_states.csv')
+# sram_df_f = sram_df_f[['Test_Name', 'Status', 'Remarks']]
 
-fcb_df_f = pd.read_csv('fcb_css_states.csv')
-fcb_df_f = fcb_df_f[['Test_Name', 'Status', 'Remarks']]
+# fcb_df_f = pd.read_csv('fcb_css_states.csv')
+# fcb_df_f = fcb_df_f[['Test_Name', 'Status', 'Remarks']]
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
@@ -51,37 +51,37 @@ legend=dict(
     x=0.00,
 ))
 
-fig_sram = px.pie(sram_df_grp_dash, values='Numbers', names='Category',color = "Category",hole=.2,color_discrete_map={'Tests Passed':'#66CDAA',
-                                 'Tests Under Development':'#00BFFF',                                                                           
-                                 'Tests Failed':'#CD5C5C'})
-fig_sram.update_layout(title={'text': '<b>Pie Chart SRAM  (Unit Level)</b>','y':1,
-        'x':0.5,
-        'xanchor': 'center',
-        'yanchor': 'top'},
-font={'size': 15},
-title_font_color='black',
-legend=dict(
-    yanchor="top",
-    y=0.99,
-    xanchor="left",
-    x=0.00,
-))
+# fig_sram = px.pie(sram_df_grp_dash, values='Numbers', names='Category',color = "Category",hole=.2,color_discrete_map={'Tests Passed':'#66CDAA',
+#                                  'Tests Under Development':'#00BFFF',                                                                           
+#                                  'Tests Failed':'#CD5C5C'})
+# fig_sram.update_layout(title={'text': '<b>Pie Chart SRAM  (Unit Level)</b>','y':1,
+#         'x':0.5,
+#         'xanchor': 'center',
+#         'yanchor': 'top'},
+# font={'size': 15},
+# title_font_color='black',
+# legend=dict(
+#     yanchor="top",
+#     y=0.99,
+#     xanchor="left",
+#     x=0.00,
+# ))
 
-fig_fcb = px.pie(fcb_df_grp_dash, values='Numbers', names='Category',color = "Category",hole=.2,color_discrete_map={'Tests Passed':'#66CDAA',
-                                 'Tests Under Development':'#00BFFF',                                                                           
-                                 'Tests Failed':'#CD5C5C'})
-fig_fcb.update_layout(title={'text': '<b>Pie Chart FCB  (Unit Level)</b>','y':1,
-        'x':0.5,
-        'xanchor': 'center',
-        'yanchor': 'top'},
-font={'size': 15},
-title_font_color='black',
-legend=dict(
-    yanchor="top",
-    y=0.99,
-    xanchor="left",
-    x=0.00,
-))
+# fig_fcb = px.pie(fcb_df_grp_dash, values='Numbers', names='Category',color = "Category",hole=.2,color_discrete_map={'Tests Passed':'#66CDAA',
+#                                  'Tests Under Development':'#00BFFF',                                                                           
+#                                  'Tests Failed':'#CD5C5C'})
+# fig_fcb.update_layout(title={'text': '<b>Pie Chart FCB  (Unit Level)</b>','y':1,
+#         'x':0.5,
+#         'xanchor': 'center',
+#         'yanchor': 'top'},
+# font={'size': 15},
+# title_font_color='black',
+# legend=dict(
+#     yanchor="top",
+#     y=0.99,
+#     xanchor="left",
+#     x=0.00,
+# ))
 
 arr =[158,158,158,158,158,158,250,250]
 aarr= [21,35,39,56,65,96,139,165]
@@ -95,7 +95,7 @@ f1 = go.Figure(
     ],
     layout = {"xaxis": {"title": "Weeks"}, "yaxis": {"title": "No. of Tests"}, "title": "Weekly Statistics"}
 )
-f1.update_layout(title={'text': '<b>Weekly Statistics SoC</b>','y':0.9,
+f1.update_layout(title={'text': '<b>Weekly Statistics Castor IP</b>','y':0.9,
         'x':0.5,
         'xanchor': 'center',
         'yanchor': 'top'},
