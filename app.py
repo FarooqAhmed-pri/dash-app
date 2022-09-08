@@ -445,7 +445,7 @@ html.Div(children = 'Combined Coverage Report:', style = {
     
     children=[
         html.Iframe(
-            src="assets/soc/dashboard.html",
+            src="assets/castor/dashboard.html",
             style={"height": "1067px", "width": "100%"},
         )
     ]
