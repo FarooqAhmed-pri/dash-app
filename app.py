@@ -38,7 +38,7 @@ server = app.server
 fig = px.pie(df_grp_dash, values='Numbers', names='Category',color = "Category",hole=.2,color_discrete_map={'Tests Passed':'#66CDAA',
                                  'Tests Under Development':'#00BFFF',                                                                           
                                  'Tests Failed':'#CD5C5C'})
-fig.update_layout(title={'text': '<b>Pie Chart Castor IP</b>','y':1,
+fig.update_layout(title={'text': '<b>Pie Chart Castor</b>','y':1,
         'x':0.5,
         'xanchor': 'center',
         'yanchor': 'top'},
@@ -95,7 +95,7 @@ f1 = go.Figure(
     ],
     layout = {"xaxis": {"title": "Weeks"}, "yaxis": {"title": "No. of Tests"}, "title": "Weekly Statistics"}
 )
-f1.update_layout(title={'text': '<b>Weekly Statistics Castor IP</b>','y':0.9,
+f1.update_layout(title={'text': '<b>Weekly Statistics Castor</b>','y':0.9,
         'x':0.5,
         'xanchor': 'center',
         'yanchor': 'top'},
@@ -127,7 +127,7 @@ app.layout = html.Div(style = {
     }
     
   ),
-    html.Div(children = 'Castor IP Tests Statistics', style = {
+    html.Div(children = 'Castor Tests Statistics', style = {
     'textAlign': 'center',
     # 'color': '#7FDBFF',
     'color': 'blue',
