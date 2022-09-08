@@ -287,10 +287,10 @@ dash_table.DataTable(    style_data={
 #     'color': 'black',
 #     'fontWeight': 'bold'
 #   }),
-    dcc.Graph(
-    id = 'gemini-graph-2',
-    figure = f1
-  ),
+#     dcc.Graph(
+#     id = 'gemini-graph-2',
+#     figure = f1
+#   ),
  dcc.Markdown('''
     [](/)
 '''),
