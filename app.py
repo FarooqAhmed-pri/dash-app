@@ -391,7 +391,7 @@ html.Div(children = 'Statistics', style = {
          },
             {
             'if': {
-                'filter_query': '{Status} contains "timeout"',
+                'filter_query': '{Status} contains "FATAL"',
                 'column_id': 'Status'
             },
             'backgroundColor': '#CD5C5C',
